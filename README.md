@@ -1,10 +1,23 @@
 # udemy-ml-com-python
 Curso Machine Learning com Python
 
+## Links
+- [Hugging Face - AI Community](https://huggingface.co/)
+    - [Datasets](https://huggingface.co/datasets)
+- Repositórios de dados recomendados para estudo pelo instrutor
+    - [INEP](https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados)
+    - [Google dataset search](https://datasetsearch.research.google.com)
+    - [Portal brasileiro de dados abertos](https://www.dados.gov.br)
+    - [Kaggle](https://www.kaggle.com)
+    - [UCI machine learn repository](https://archive.ics.uci.edu/ml/index.php)
+    - [OMS](https://www.who.int)
+    - [Paho - org. panamericana de saúde](https://www.paho.org/en)
+    - [DrivenData](https://www.drivendata.org)
+
 ## Observações
 - instrutor usa o google colab
 
-## Estudos
+## Estudos (estatística)
 
 Mediana = média dos pontos centrais ordenados. Ex.: dado um conjunto de 6 itens x = {10,23,32,40,57,57}, mediana ficaria:
 Mediana = (32 + 40) / 2
@@ -27,3 +40,20 @@ A relevância deles deve ser analisada para definir se continuarão no dataset o
 pois se náo forem relevantes, podem interferir significativamente nos resultados das análises.
 Eles podem ser identificados por observações diretas no dataset (quando a quantidade for pequena), por gráficos e por funções específicas.
 O gráfico mais usado para identificar os outliers é o BoxPlot.
+
+---
+
+## Alguns algoritmos de classificação
+- Regressão logística
+- Naive Baynes
+- Árvore de decisão
+- Random forest
+- KNN
+- Máquinas de vetor de suporte
+- XGBoost
+- LightGBM
+- CatBoost
+- Redes neurais artificiais
+
+## Datasets usados
+- [Previsão de doença cardíaca](https://www.kaggle.com/fedesoriano/heart-failure-prediction/version/1)
