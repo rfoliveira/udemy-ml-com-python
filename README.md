@@ -57,3 +57,34 @@ O gráfico mais usado para identificar os outliers é o BoxPlot.
 
 ## Datasets usados
 - [Previsão de doença cardíaca](https://www.kaggle.com/fedesoriano/heart-failure-prediction/version/1)
+
+## Escalonamento
+Tem por objetivo garantir que nenhuma variável tenha mais importância devido à granes diferenças de valores na criação de um modelo. 
+Existem 3 tipos:
+1. Padronização (StandardScaler): 
+    Recomendado quando a variável segue ou se aproxima de uma distribuição normal.
+    Centraliza os dados na média 0 e desvio padrão 1, mantendo assim a coerência na distribuição
+    $z = \frac{x - u}{s}$ ,onde:<p>z = z_score, 
+    x = valor que estou querendo fazer a padronizaçào ou escalonamento, 
+    u = média, 
+    s = desvio padrão
+    </p>
+2. Normalização (MinMaxScaler):
+    Recomendado quando a variável não segue a distribuição normal. Coloca os dados em um intervalo fixo, geralmente 0 e 1.
+    $x_\text{norm} = \frac{x - x_\text{min}}{x_\text{max} - x_\text{min}}$
+3. Escalonamento Robusto (RobustScaler):
+    Recomendado quando existem muito outliers na variável
+    $x_\text{scaled} = \frac{x - \text{mediana}(x)}{IQR(x)}$
+
+### Lógica
+#### Nomear o escalonamento
+nome = StandardScaler(), MinMaxScaler() ou RobustScaler()
+
+#### Treino
+nome.fit(X) = aprende os parâmetros (média, mediana, máximo, ...)
+
+#### Escalonamento
+X_esc = nome.transform(X) # transforma os dados
+
+#### Dado novo
+X_novo_esc = nome.transform(X_novo) # transforma novos dados com os mesmos parâmetros
