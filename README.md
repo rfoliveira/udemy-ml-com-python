@@ -16,6 +16,8 @@ Curso Machine Learning com Python
 
 ## Observações
 - instrutor usa o google colab
+- instrutor usa pickle para salvar as variáveis (atributos), do modelo, que é nativo,
+porém o jotlib tem uma performance melhor e é recomendado para o uso em ML
 
 ## Estudos (estatística)
 
@@ -76,6 +78,8 @@ Existem 3 tipos:
     Recomendado quando existem muito outliers na variável
     $x_\text{scaled} = \frac{x - \text{mediana}(x)}{IQR(x)}$
 
+[Ref. fórmulas em markdown](https://en.wikibooks.org/wiki/LaTeX/Mathematics)
+
 ### Lógica
 #### Nomear o escalonamento
 nome = StandardScaler(), MinMaxScaler() ou RobustScaler()
@@ -88,3 +92,38 @@ X_esc = nome.transform(X) # transforma os dados
 
 #### Dado novo
 X_novo_esc = nome.transform(X_novo) # transforma novos dados com os mesmos parâmetros
+
+## Naive Baines
+Um dos primeiros algoritmos em Machine Learning
+**Classificador** probabilístico baseado na aplicação do teorema de Baines
+
+$P(A|B)=\frac{P(B|A)P(A)}{P(B)}$, onde:
+
+P(A|B) = probabilidade de A ocorrer dado que B ocorreu, é igual a
+P(B|A) = probabilidade de B ocorrer dado que A ocorreu, vezes
+P(A) = probabilidade de A acontecer, dividido por
+P(B) = probabilidade de B acontecer
+
+Também pode ser escrita como:
+$P(A|B)P(B)=P(A \cap B)=P(B \cap A)$
+
+Premissa: independência entre as variáveis do problema
+Trabalha muito bem variáveis categóricas
+
+**Algumas aplicações**
+- Filtros de spam
+- Diagnósticos médicos
+- Classificação de informações textuais
+- Análise de crédito
+- Separação de documentos
+- Previsão de falhas
+
+**Vantagens**
+- Rápido e "fácil" de entendimento
+- Pouco esforço computacional
+- Bom desempenho com muitos dados
+- Boas previsões com poucos dados
+
+**Desvantagens**
+- Considera atributos independentes (quando temos atributos que são dependentes, ele acaba por não dar resultados não tão bons)
+- Atribuição de valor nulo de probabilidade quando uma classe contida no conjunto de teste não se apreenta no conjunto de treino (não é comum ocorrer quando feito um pré-processamento, mas pode ocorrer) Por exemplo: em uma base de análise de crédito, alvo de "chance da pessoa fazer o pagamento da parcela" e no conjunto de teste náo tem uma das opções de "sim" ou "nào", ficando discrepante entre treino e teste, e nesse caso é atribuído valor nulo.
